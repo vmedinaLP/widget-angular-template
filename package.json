@@ -4,7 +4,13 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
+    "start:test": "ng serve test-packer",
+    "start:prod": "ng serve prod-packer",
+    "install": "npm install file:./dist/my-lib",
     "build": "ng build",
+    "sandbox:dev": "ng build my-lib && npm run install && ng build test-packer",
+    "build:dev": "ng build my-lib && npm run install && ng build prod-packer",
+    "watch:build": "ng build my-lib --watch",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
@@ -18,20 +24,28 @@
     "@angular/platform-browser": "^14.0.0",
     "@angular/platform-browser-dynamic": "^14.0.0",
     "@angular/router": "^14.0.0",
+    "my-lib": "file:dist/my-lib",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
+    "@angular-builders/custom-webpack": "14.0.0",
+    "@angular-devkit/build-angular": "^14.0.2",
     "@angular/cli": "~14.0.2",
     "@angular/compiler-cli": "^14.0.0",
     "@types/jasmine": "~4.0.0",
     "jasmine-core": "~4.1.0",
+    "javascript-obfuscator": "2.8.0 || 3.0.0 || 4.0.0",
     "karma": "~6.3.0",
     "karma-chrome-launcher": "~3.1.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.7.2"
+    "ng-packagr": "^14.0.0",
+    "tsconfig-paths-webpack-plugin": "^3.5.2",
+    "typescript": "~4.7.2",
+    "webpack-cli": "^4.10.0",
+    "webpack-obfuscator": "^3.5.1"
   }
 }
