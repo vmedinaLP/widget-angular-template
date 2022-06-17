@@ -13,7 +13,11 @@
     "build:dev": "ng build my-lib && npm run install && ng build prod-packer --output-hashing=none && npm run concat",
     "sandbox:dev": "ng build my-lib && npm run install && ng build test-packer",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "compodoc": "npx compodoc -p tsconfig.doc.json -d docs -o -s -nPayments-Widget",
+    "compodoc:build": "compodoc -p tsconfig.doc.json",
+    "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
+    "compodoc:serve": "compodoc -s"
   },
   "private": true,
   "dependencies": {
@@ -37,6 +41,7 @@
     "@angular-devkit/build-angular": "^14.0.2",
     "@angular/cli": "~14.0.2",
     "@angular/compiler-cli": "^14.0.0",
+    "@compodoc/compodoc": "^1.1.19",
     "@ngtools/webpack": "^14.0.2",
     "@types/jasmine": "~4.0.0",
     "@typescript-eslint/eslint-plugin": "^5.28.0",
