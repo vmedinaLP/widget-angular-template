@@ -1,18 +1,11 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { MyLibModule } from 'my-lib';
-import { AppComponent } from './components/app.component';
-/**init service */
-import { CargarScriptService } from './services/cargar-script.service'
+import { NgModule } from '@angular/core'
+import { BrowserModule } from '@angular/platform-browser'
+import { MyLibModule } from 'my-lib'
+import { AppComponent } from './components/app.component'
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    MyLibModule
-  ],
-  providers: [CargarScriptService],
-  bootstrap: [AppComponent]
+  declarations: [AppComponent],
+  imports: [BrowserModule, MyLibModule],
+  providers: [],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

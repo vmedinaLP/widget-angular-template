@@ -1,35 +1,27 @@
-import { Component, Inject, ElementRef, Directive, OnInit } from '@angular/core';
-import { DOCUMENT } from '@angular/common';
-import { CargarScriptService } from '../services/cargar-script.service'
+import { Component, OnInit } from '@angular/core'
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
-
 export class AppComponent implements OnInit {
-  widget: any;
   constructor() {
     /*let newDiv = document.createElement('script');
     newDiv.setAttribute('src', '../../assets/widgetPaymentMethods.js')
     document.head.appendChild(newDiv);*/
-    let resume = document.createElement('script');
+    const resume = document.createElement('script')
     resume.setAttribute('src', '../../assets/ALFIN.js')
-    document.head.appendChild(resume);
+    document.head.appendChild(resume)
   }
-
-  title = 'test-packer';
-
+  title = 'test-packer'
   ngOnInit(): void {
-    this.desplegar();
+    this.desplegar()
   }
   desplegar() {
-    const newDiv = document.createElement('selector-widget') as any;
+    const newDiv = document.createElement('selector-widget') as any
     //newDiv.addEventListener('finalResponse', { hola: 'saludo' });
-    newDiv.message = 'true';
-    document.getElementById('widget-container')!.appendChild(newDiv);
+    newDiv.message = 'false'
+    document.getElementById('widget-container')?.appendChild(newDiv)
   }
-
 }
-
