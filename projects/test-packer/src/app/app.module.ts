@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MyLibModule } from 'my-lib';
 import { AppComponent } from './components/app.component';
-
+/**init service */
+import { CargarScriptService } from './services/cargar-script.service'
 @NgModule({
   declarations: [
     AppComponent
@@ -11,7 +12,7 @@ import { AppComponent } from './components/app.component';
     BrowserModule,
     MyLibModule
   ],
-  providers: [],
+  providers: [CargarScriptService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

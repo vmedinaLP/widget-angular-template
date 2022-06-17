@@ -43,7 +43,7 @@
       },
       "root": "projects/test-packer",
       "sourceRoot": "projects/test-packer/src",
-      "prefix": "app",
+      "prefix": "test-packer",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -139,14 +139,11 @@
       },
       "root": "projects/prod-packer",
       "sourceRoot": "projects/prod-packer/src",
-      "prefix": "app",
+      "prefix": "prod-packer",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "customWebpackConfig": {
-              "path": "./webpack.config.js"
-            },
             "outputPath": "dist/prod-packer",
             "index": "projects/prod-packer/src/index.html",
             "main": "projects/prod-packer/src/main.ts",

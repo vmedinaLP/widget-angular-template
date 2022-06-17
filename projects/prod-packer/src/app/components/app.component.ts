@@ -1,10 +1,21 @@
-import { Component } from '@angular/core';
+import { ThisReceiver } from '@angular/compiler';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
+  selector: 'selector-widget',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class AppComponent {
+  state: string = '';
+  intialData: string = '';
+  @Input()
+  set message(message: string) {
+    console.log('message fron client use to test:', message);
+    this.state = message;
+    //this.buildDataWidget = message;
+  }
+
   title = 'prod-packer';
 }

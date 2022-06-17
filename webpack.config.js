@@ -1,4 +1,5 @@
 const { AngularWebpackPlugin } = require("@ngtools/webpack");
+const JavaScriptObfuscator = require("webpack-obfuscator");
 const TsconfigPathsPlugin = require("tsconfig-paths-webpack-plugin");
 const webpack = require("webpack");
 const path = require("path");
@@ -10,6 +11,7 @@ class FileMergeWebpackPlugin {
     this.destination = destination;
     this.removeSourceFiles = removeSourceFiles;
   }
+
   apply(compiler) {
     const fileBuffers = [];
 
@@ -28,11 +30,22 @@ class FileMergeWebpackPlugin {
     });
   }
 }
+
 module.exports = {
-  output: {
-    filename: "[name].js",
+  optimization: {
+    minimize: false,
+    splitChunks: {
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "app/vendor",
+          chunks: (chunk) => {
+            return chunk.name === "app/main";
+          },
+        },
+      },
+    },
   },
-  mode: "production",
   module: {
     rules: [
       {
@@ -52,6 +65,10 @@ module.exports = {
     symlinks: false,
     modules: [path.resolve("node_modules")],
   },
+  mode: "production",
+  output: {
+    filename: "[name].js",
+  },
   plugins: [
     new FileMergeWebpackPlugin(
       [
@@ -59,9 +76,14 @@ module.exports = {
         "dist/prod-packer/polyfills.js",
         "dist/prod-packer/main.js",
       ],
-      "./dist/prod-packer/paymentSummary.js",
+      "./dist/prod-packer/widgetSummary.js",
       true
     ),
+    new AngularWebpackPlugin({
+      tsConfigPath: "tsconfig.json",
+      entryModule: "projects/prod-packer/src/app/app.module#AppModule",
+      sourceMap: true,
+    }),
     new webpack.ContextReplacementPlugin(
       /\@angular(\\|\/)core(\\|\/)fesm5/,
       path.resolve(__dirname, "./projects/prod-packer/src")
@@ -70,18 +92,4 @@ module.exports = {
       maxChunks: 1,
     }),
   ],
-  optimization: {
-    minimize: false,
-    splitChunks: {
-      cacheGroups: {
-        commons: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "app/vendor",
-          chunks: (chunk) => {
-            return chunk.name === "app/main";
-          },
-        },
-      },
-    },
-  },
 };
