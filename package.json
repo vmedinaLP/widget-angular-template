@@ -14,7 +14,7 @@
     "sandbox:dev": "ng build my-lib && npm run install && ng build test-packer",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "compodoc": "npx compodoc -p tsconfig.doc.json -d docs -o -s -nPayments-Widget",
+    "compodoc": "npx compodoc -p tsconfig.doc.json -d docs -o -s -nTemplate-Widget -w",
     "compodoc:build": "compodoc -p tsconfig.doc.json",
     "compodoc:build-and-serve": "compodoc -p tsconfig.doc.json -s",
     "compodoc:serve": "compodoc -s"
