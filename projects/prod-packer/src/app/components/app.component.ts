@@ -1,5 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core'
-
+import { environment } from '../../environments/environment'
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,6 +7,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core'
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class AppComponent {
+  test!: string
   state = ''
   intialData = ''
   @Input()
@@ -16,4 +17,7 @@ export class AppComponent {
     //this.buildDataWidget = message;
   }
   title = 'prod-packer'
+  constructor() {
+    this.test = environment.SCOrigen
+  }
 }

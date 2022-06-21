@@ -9,7 +9,7 @@ import { createCustomElement } from '@angular/elements'
   imports: [BrowserModule, MyLibModule],
   providers: [],
   entryComponents: [AppComponent],
-  bootstrap: [AppComponent],
+  // bootstrap: [AppComponent],
 })
 export class AppModule {
   constructor(private injector: Injector) {
