@@ -7,17 +7,8 @@ import { environment } from '../../environments/environment'
   encapsulation: ViewEncapsulation.ShadowDom,
 })
 export class AppComponent {
-  test!: string
-  state = ''
-  intialData = ''
   @Input()
-  set message(message: string) {
-    console.log('message fron client use to test:', message)
-    this.state = message
-    //this.buildDataWidget = message;
-  }
+  set message(message: any) {}
   title = 'prod-packer'
-  constructor() {
-    this.test = environment.SCOrigen
-  }
+  constructor() {}
 }

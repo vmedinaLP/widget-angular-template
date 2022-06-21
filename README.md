@@ -46,7 +46,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ┃ ┃ ┃ ┣ 📂components
 ┃ ┃ ┃ ┣ 📂services
 ┃ ┃ ┃ ┃ ┣ 📂authentication
-┃ ┃ ┃ ┃ ┗ 📂interceptors
 ┃ ┃ ┣ 📂assets
 ┃ ┃ ┣ 📂environments
 ┗ 📂test-packer  => proyecto empaquetador de pruebas
@@ -55,7 +54,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ┃ ┃ ┃ ┣ 📂components
 ┃ ┃ ┃ ┣ 📂services
 ┃ ┃ ┃ ┃ ┣ 📂authentication
-┃ ┃ ┃ ┃ ┗ 📂interceptors
 ┃ ┃ ┣ 📂assets
 ┃ ┃ ┣ 📂environments
 ```
@@ -86,7 +84,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - clona el repositorio en tu maquina local.
 - con el `Searsh` del VSCode reemplaza de forma global los nombres de los proyectos que desea cambiar. `test-packer` app de pruebas `prod-packer` app de produccion `my-lib` o la libreria.
-- configure el nombre del selector con el que se invocara el WIDGET desde otra aplicacion, esta configuracion se ubica en el app.module.ts del proyecto de distribucion `prod-packer`:
+- (Opcional) configure el nombre del selector con el que se invocara el WIDGET desde otra aplicacion, esta configuracion se ubica en el app.module.ts del proyecto de distribucion `prod-packer`:
 
 ```json
     export class AppModule {
@@ -94,6 +92,15 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
       const imagenEspacio = createCustomElement(AppComponent, { injector })
       customElements.define('selector-widget', imagenEspacio)
     }
+  }
+```
+
+- (Opcional) configure nombre de la data entrante en el app.component.ts del proyecto final de produccion. por defecto message
+
+```json
+@Input()
+  set message(message: any) {
+
   }
 ```
 
@@ -208,6 +215,12 @@ usando como empaquetador final el proyecto `prod-packer` el cual importa el proy
   ```
 
   construye y concatena el widget usando la configuracion del archivo raiz webpack.config.
+
+# Services and interceptor
+
+- el proyecto incluye un servicio inerceptor con el codigo necesario para autenticar y refrescar JWT. en los proyectos raiz puede dirigirse a las carpetas de servicios/authentication/interceptor.service.ts y configurar el header que requiera
+- en la libreria `my-lib` encontrara un servicio de ejemplo el cual puede modificar a gusto de acuerdo a los requerimientos del codigo de la misma, al igual que agregar mas servicios si asi lo dispone.
+- para generar nuevos servicios o componentes remitase a `Code scaffolding` alli encontraras los comandos necesarios para el CLI.
 
 ## Code scaffolding
 
