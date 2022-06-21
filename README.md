@@ -152,7 +152,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     "my-lib": "file:dist/my-lib/my-lib-0.0.1.tgz",
     },
 
-    NOTA: de esta forma solo recargara los cambios de la app y no los de la libreria para lo que tendria que ejecutar el comando cada vez que cambie algo en su desarrollo
+    NOTA-1: de esta forma solo recargara los cambios de la app y no los de la libreria para lo que tendria que ejecutar el comando cada vez que cambie algo en su desarrollo
+    NOTA-2: puede crear 4 scripts para cada entorno si asi lo desea.
 
 # Library packaging generation (optional)
 
@@ -183,10 +184,14 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - ## Build prod
 
 Crea widget en el directorio 📦dist/📂prod-packer listo para distribución en los diferentes entornos; estos son los comandos para cada entorno:
+
+```json
 `npm run build-dev`, => reemplaza en environment por environment.ts
 `npm run build-qa`, => reemplaza en environment por environment.qa.ts
 `npm run build-stag`, => reemplaza en environment por environment.stag.ts
 `npm run build-prod`, => reemplaza en environment por environment.prod.ts
+```
+
 usando como empaquetador final el proyecto `prod-packer` el cual importa el proyecto ('libreria') `payment-methods`.
 
 - Consideración importante=>
