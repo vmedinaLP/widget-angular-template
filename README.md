@@ -147,6 +147,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     "my-lib": "file:dist/my-lib",
     },
 
+  - Serve prod-packer (OPCIONAL):
+    es posible arrancar el proyecto final en un servidor local si asi lo requiere, comando :
+    ```json`
+    npm run start:prod
+
+    ```
+    configurable script para cada entorno
+
+    ```
+
 - ## boot with pack
 
   - se utiliza el comando `npm run start:lib` en un entorno local de desarrollo y por defecto se habilitará la url `http://localhost:9090/` y ejecutara el proyecto de pruebas `test-packer`.
