@@ -133,10 +133,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     - si es la primera vez que corres el Widget en tu maquina debes ejecutas el comando `npm link` esto nos permite crear un enlace simbolico global al build de la libreria
     - antes de correr el servidor desarrollo debe ejecutar `npm run build:watch` que instala la biblioteca en el packege.json a la vez que corre un build observable de la libreria
     - en otra consola ejecuta cualquiera de los siguientes scripts de acuerdo al entorno que desea apuntar:
+
+    ```json
       `start:test-dev`
       `start:test-qa`
       `start:test-stag`
       `start:test-prod`
+    ```
 
     - NOTA: de esta forma no solo recargara automáticamente los cambios de la app tambien los de la libreria.
 
