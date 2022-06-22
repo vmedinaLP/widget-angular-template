@@ -135,10 +135,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     - en otra consola ejecuta cualquiera de los siguientes scripts de acuerdo al entorno que desea apuntar:
 
     ```json
-      `start:test-dev`
-      `start:test-qa`
-      `start:test-stag`
-      `start:test-prod`
+      `npm run start:test-dev`
+      `npm run start:test-qa`
+      `npm run start:test-stag`
+      `npm run start:test-prod`
     ```
 
     - NOTA: de esta forma no solo recargara automáticamente los cambios de la app tambien los de la libreria.
