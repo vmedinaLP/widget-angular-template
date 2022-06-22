@@ -18,7 +18,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - Coleccion de proyectos : Distribucion definida por angular-cli y atomic design.
 
-```json
+```
 📦projects
 ┣ 📂my-lib => proyecto libreria
 ┃ ┣ 📂src
@@ -60,7 +60,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - builds and package : Distribucion por defecto angular.json.
 
-```json
+```
 📦dist
 ┣ 📂my-lib      => se crea build y package solo de la libreria
 ┣ 📂prod-packer => se crea build final que importa libreria para su uso en produccion.
@@ -69,7 +69,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - Documentacion : La distribución de las carpetas lo define compodoc.
 
-```json
+```
 📦docs
 ┣ 📂fonts
 ┣ 📂graph
@@ -86,7 +86,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - con el `Searsh` del VSCode reemplaza de forma global los nombres de los proyectos que desea cambiar. `test-packer` app de pruebas `prod-packer` app de produccion `my-lib` o la libreria.
 - (Opcional) configure el nombre del selector con el que se invocara el WIDGET desde otra aplicacion, esta configuracion se ubica en el app.module.ts del proyecto de distribucion `prod-packer`:
 
-```json
+```
     export class AppModule {
       constructor(private injector: Injector) {
       const imagenEspacio = createCustomElement(AppComponent, { injector })
@@ -97,7 +97,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - (Opcional) configure nombre de la data entrante en el app.component.ts del proyecto final de produccion. por defecto message
 
-```json
+```
 @Input()
   set message(message: any) {
 
@@ -106,7 +106,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - configuere el nombre del fichero del widget final en el archivo raiz concat.js:
 
-```json
+```
     concat(
     files,
     path.resolve(__dirname, "./dist/prod-packer/NOMBRE-WIDGET.js"),
@@ -172,7 +172,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - Para generar la librería se ejecuta el comando `npm run pack:lib`, la cual generará el archivo `payment-methods-0.0.1.tgz` dentro de la carpeta `dist\my-lib`de la raiz del proyecto. Nota: package de la libreria sin publicar de forma local. [Documentacion](https://dev.azure.com/sistecredito/LuegopaGO/_git/lpg-ang-front-portal-lpg-credinet?path=/projects/payment-methods/README.md&_a=preview)
 
-```json
+```
 📁dist/
   |
   ├─📁my-lib/
@@ -185,7 +185,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
   -Crea widget de pruebas en el directorio 📦dist/📂test-packer para usarlo en una aplicacion de pruebas en los diferentes entornos; estos son los comandos para cada entorno:
 
-  ```json
+  ```
   `sandbox:dev`, => reemplaza en environment por environment.ts
   `sandbox:qa`, => reemplaza en environment por environment.qa.ts
   `sandbox:stag`, => reemplaza en environment por environment.stag.ts
@@ -198,7 +198,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
   -Crea widget en el directorio 📦dist/📂prod-packer listo para distribución en los diferentes entornos; estos son los comandos para cada entorno:
 
-  ```json
+  ```
   `npm run build-dev`, => reemplaza en environment por environment.ts
   `npm run build-qa`, => reemplaza en environment por environment.qa.ts
   `npm run build-stag`, => reemplaza en environment por environment.stag.ts
@@ -213,7 +213,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
       angular.json =>
 
-    ```json
+    ```
     "builder": "@angular-devkit/build-angular:browser",
     ```
 
@@ -223,7 +223,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
     angular.json =>
 
-    ```json
+    ```
     "builder": "@angular-builders/custom-webpack",
     "options": {
       "customWebpackConfig": {
@@ -283,7 +283,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - script
 
-```json
+```
     const newScript = document.createElement('script')
     newScript.setAttribute('src', 'url widget')
     document.head.appendChild(newScript)
@@ -291,7 +291,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 - load
 
-```json
+```
     const newDiv = document.createElement('selector-widget') as any
     newDiv.addEventListener('data-recibida', { saludo: 'hola' });
     newDiv.message = 'data-enviada'
