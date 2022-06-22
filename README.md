@@ -147,16 +147,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     "my-lib": "file:dist/my-lib",
     },
 
-  - ## boot with pack
+- ## boot with pack
 
-    - se utiliza el comando `npm run start:lib` en un entorno local de desarrollo y por defecto se habilitará la url `http://localhost:9090/` y ejecutara el proyecto de pruebas `test-packer`.
+  - se utiliza el comando `npm run start:lib` en un entorno local de desarrollo y por defecto se habilitará la url `http://localhost:9090/` y ejecutara el proyecto de pruebas `test-packer`.
 
-    "dependencies": {
-    "my-lib": "file:dist/my-lib/my-lib-0.0.1.tgz",
-    },
+  "dependencies": {
+  "my-lib": "file:dist/my-lib/my-lib-0.0.1.tgz",
+  },
 
-    - NOTA-1: de esta forma solo recargara los cambios de la app y no los de la libreria para lo que tendria que ejecutar el comando cada vez que cambie algo en su desarrollo
-    - NOTA-2: puede crear 4 scripts para cada entorno si asi lo desea.
+  - NOTA-1: de esta forma solo recargara los cambios de la app y no los de la libreria para lo que tendria que ejecutar el comando cada vez que cambie algo en su desarrollo
+  - NOTA-2: puede crear 4 scripts para cada entorno si asi lo desea.
 
 # Library packaging generation (optional)
 
