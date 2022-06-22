@@ -134,7 +134,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
     - antes de correr el servidor desarrollo debe ejecutar `npm run build:watch` que instala la biblioteca en el packege.json a la vez que corre un build observable de la libreria
     - en otra consola ejecuta cualquiera de los siguientes scripts de acuerdo al entorno que desea apuntar:
 
-    ```json
+    ```
       `npm run start:test-dev`
       `npm run start:test-qa`
       `npm run start:test-stag`
