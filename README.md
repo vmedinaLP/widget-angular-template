@@ -149,13 +149,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
   - Serve prod-packer (OPCIONAL):
     es posible arrancar el proyecto final en un servidor local si asi lo requiere, comando :
-    ```json`
+
+    ```
     npm run start:prod
 
     ```
-    configurable script para cada entorno
 
-    ```
+    configurable script para cada entorno
 
 - ## boot with pack
 
