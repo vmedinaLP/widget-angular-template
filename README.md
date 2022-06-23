@@ -170,7 +170,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Library packaging generation (optional)
 
-- Para generar la librería se ejecuta el comando `npm run pack:lib`, la cual generará el archivo `payment-methods-0.0.1.tgz` dentro de la carpeta `dist\my-lib`de la raiz del proyecto. Nota: package de la libreria sin publicar de forma local. [Documentacion](https://dev.azure.com/sistecredito/LuegopaGO/_git/lpg-ang-front-portal-lpg-credinet?path=/projects/payment-methods/README.md&_a=preview)
+- Para generar la librería se ejecuta el comando `npm run pack:lib`, la cual generará el archivo `my-lib-0.0.1.tgz` dentro de la carpeta `dist\my-lib`de la raiz del proyecto. Nota: package de la libreria sin publicar de forma local.
 
 ```
 📁dist/
@@ -192,7 +192,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   `sandbox:prod`, => reemplaza en environment por environment.prod.ts
   ```
 
-  usando como empaquetador final el proyecto de pruebas `test-packer` el cual importa el proyecto ('libreria') `payment-methods`.
+  usando como empaquetador final el proyecto de pruebas `test-packer` el cual importa el proyecto ('libreria') `my-lib`.
 
 - ## Build prod
 
@@ -205,7 +205,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   `npm run build-prod`, => reemplaza en environment por environment.prod.ts
   ```
 
-  usando como empaquetador final el proyecto `prod-packer` el cual importa el proyecto ('libreria') `payment-methods`.
+  usando como empaquetador final el proyecto `prod-packer` el cual importa el proyecto ('libreria') `my-lib`.
 
   - Consideración importante=>
 
