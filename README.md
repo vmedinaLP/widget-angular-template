@@ -5,6 +5,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 # General documentation
 
 - El proyecto utiliza Compodoc en la administración de documentacion, para generarla se ejecuta el comando `npm run compodoc` y crea una carpeta con el nombre `docs` a la vez que la abrira y servira por defecto en la url `http://localhost:8080/`, NOTA: allí podras registrar la documentacion de cada uno de los elementos de tu codigo la igual que la cobertura.
+- En la raiz del proyecto encontraras una carpeta con el nombre `css` que contiene una hoja de stylos (`style.css`) y un logo (`luegopago-payment.png`), allí podras personalizar visualmente la documentación al igual que cambiar el logo de acuerdo a sus requerimientos.
 
 # Structure
 
